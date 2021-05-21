@@ -12,7 +12,7 @@ ReactDOM.render(
       <Authprovider>
       <Switch>
              <Private  path="/home" component={Weather} />
-             <Route exact path="/" component={GoogleSignin} />
+             <Route exact path="/Sign-in" component={GoogleSignin} />
       </Switch>
       </Authprovider>
     </Router>
