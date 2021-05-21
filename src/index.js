@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Weather from './Weather';
+import {BrowserRouter as Router,Switch ,Route } from "react-router-dom";
+import GoogleSignin from "./GoogleSignin";
+import Authprovider from './SignInMethod/Authprovider';
+import Private from "./Private"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Authprovider>
+      <Switch>
+             <Private exact path="/" component={Weather} />
+             <Route path="/sign-in" component={GoogleSignin} />
+      </Switch>
+      </Authprovider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
