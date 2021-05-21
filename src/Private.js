@@ -7,7 +7,7 @@ function Private({component:Component , ...rest}) {
         <Route
         {...rest}
         render={props =>{
-            return User ? <Component {...props} /> : <Redirect to="/sign-in" /> }
+            return User ? <Component {...props} /> : <Redirect to="/" /> }
         }>
             
         </Route>

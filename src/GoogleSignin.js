@@ -9,7 +9,7 @@ function GoogleSignin(props) {
         e.preventDefault();
         try{
              await Login();
-             history.push("/")
+             history.push("/home")
         }catch(err){
             console.log(err.message);
         }
